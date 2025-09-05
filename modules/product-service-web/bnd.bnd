@@ -1,0 +1,4 @@
+Bundle-SymbolicName: ru.kashtanov.product.service.web
+Bundle-Version: 1.0.0
+Export-Package: ru.kashtanov.product.service.web.application.controller
+Web-ContextPath: /product-service-web

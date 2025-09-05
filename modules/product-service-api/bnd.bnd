@@ -1,0 +1,4 @@
+Bundle-Name: product-service-api
+Bundle-SymbolicName: ru.kashtanov.product.service.api
+Bundle-Version: 1.0.0
+Export-Package: ru.kashtanov.product.service.api.*

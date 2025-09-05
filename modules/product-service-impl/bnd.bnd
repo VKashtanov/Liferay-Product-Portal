@@ -1,0 +1,4 @@
+Bundle-Name: product-service-impl
+Bundle-SymbolicName: ru.kashtanov.product.internal.service.impl
+Bundle-Version: 1.0.0
+
