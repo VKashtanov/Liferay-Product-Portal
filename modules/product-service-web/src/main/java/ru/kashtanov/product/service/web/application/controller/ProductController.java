@@ -2,12 +2,16 @@ package ru.kashtanov.product.service.web.application.controller;
 
 import io.swagger.v3.oas.annotations.Parameter;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
+import ru.kashtanov.product.service.api.dto.ProductDto;
+import ru.kashtanov.product.service.api.service.ProductService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 //JAX-RS = Java API for X-something Restful Services
@@ -23,15 +27,15 @@ import java.util.Map;
 @Produces(MediaType.APPLICATION_JSON)
 public class ProductController {
 
+    @Reference
+    private ProductService productService;
+
     @GET
     @Path("/all")
     public Response getProducts() {
+        List<ProductDto> allProducts = productService.getAllProducts();
         Map<String, Object> response = new HashMap<>();
-        response.put("total", 2);
-        response.put("items", new Object[]{
-                Map.of("id", 1, "name", "Laptop"),
-                Map.of("id", 2, "name", "Mouse")
-        });
+        response.put("products", allProducts);
         return Response.ok(response).build();
     }
 }

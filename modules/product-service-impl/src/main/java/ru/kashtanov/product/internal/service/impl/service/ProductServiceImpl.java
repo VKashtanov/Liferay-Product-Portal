@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getAllProducts() {
-        return List.of();
+        return List.of(new ProductDto(1,"Laptop","Lenovo"));
     }
 
     @Override
