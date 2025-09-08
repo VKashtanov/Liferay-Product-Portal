@@ -1,4 +1,10 @@
 dependencies {
 	compileOnly group: "com.liferay.portal", name: "release.portal.api"
 	compileOnly project(':modules:product-service-api')
+
+	// Add this for DataAccess utility
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
+
+	compileOnly 'org.osgi:osgi.cmpn:6.0.0'
+	compileOnly 'org.osgi:org.osgi.service.component.annotations:1.4.0'
 }
